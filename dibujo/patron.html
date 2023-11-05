@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Patrón Strategy</title>
+  <link rel="stylesheet" href="patron.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Patrón Strategy</h1>
+    <p>
+      El patrón Strategy es un patrón de diseño de comportamiento que te permite definir una familia de algoritmos, colocar cada uno de ellos en una clase separada y hacer sus objetos intercambiables.
+      <img id="Imagen1" src="imagenes/1.png" alt="patron1">
+    </p>
+
+    <h2>Problema</h2>
+    <p>
+      A menudo, un sistema necesita realizar una tarea que puede implementarse de varias maneras. Por ejemplo, un sistema de clasificación puede utilizar varios algoritmos de clasificación diferentes, como el algoritmo de clasificación rápida
+     o el algoritmo de clasificación por inserción.
+    </p>
+
+    <p>
+      Una solución común a este problema es implementar todos los algoritmos en la misma clase. Sin embargo, esto puede hacer que el código sea difícil de mantener y extender.
+    </p>
+
+    <img id="Imagen2" src="imagenes/2.png" alt="patron2">
+
+    <h2>Solución</h2>
+    <p>
+      El patrón Strategy resuelve este problema encapsulando cada algoritmo en una clase separada. El cliente luego puede seleccionar el algoritmo que desea utilizar en tiempo de ejecución.
+    </p>
+    <h3>Participantes</h2>
+    <ul>
+      <li>
+        <strong>Context</strong>: El objeto que delega la ejecución del algoritmo.
+      </li>
+      <li>
+        <strong>Strategy</strong>: La interfaz que define el comportamiento del algoritmo.
+      </li>
+      <li>
+        <strong>ConcreteStrategy</strong>: Una clase que implementa la interfaz Strategy.
+      </li>
+    </ul>
+    <h3>Ejemplo</h2>
+    <p>
+      El siguiente ejemplo muestra cómo se puede utilizar el patrón Strategy para implementar un algoritmo de clasificación.
+    </p>
+   
+   
+    <pre style="background-color:#8b8888; white-space: pre-wrap; overflow-x: auto; line-height: 1.5;">
+    
+
+    public class Context {
+    
+          private Strategy strategy;
+    
+          public Context(Strategy strategy) {
+            this.strategy = strategy;
+          }
+    
+          public void sort(int[] numbers) {
+            strategy.sort(numbers);
+          }
+        }
+    
+        public interface Strategy {
+    
+          void sort(int[] numbers);
+        }
+    
+        public class QuickSortStrategy implements Strategy {
+    
+          @Override
+          public void sort(int[] numbers) {
+            // Implementación del algoritmo de clasificación rápida
+          }
+        }
+    
+        public class InsertionSortStrategy implements Strategy {
+    
+          @Override
+          public void sort(int[] numbers) {
+            // Implementación del algoritmo de clasificación por inserción
+          }
+        }
+    
+        public class Main {
+    
+          public static void main(String[] args) {
+            Context context = new Context(new QuickSortStrategy());
+            int[] numbers = { 5, 2, 4, 7, 1, 3 };
+            context.sort(numbers);
+            System.out.println(Arrays.toString(numbers));
+    
+            context = new Context(new InsertionSortStrategy());
+            context.sort(numbers);
+            System.out.println(Arrays.toString(numbers));
+          }
+        }
+        </pre>
+
+
+    <p>
+      En este ejemplo, la clase Context representa el objeto que delega la ejecución del algoritmo. La interfaz Strategy define el comportamiento del algoritmo de clasificación. Las clases QuickSortStrategy e InsertionSortStrategy implementan la interfaz Strategy y proporcionan dos algoritmos de clasificación diferentes.
+    </p>
+    <p>
+      En el método main(), se crean dos objetos Context, uno para cada algoritmo de clasificación. Luego, se llama al método sort() en cada objeto Context para ordenar un arreglo de números.
+    </p>
+    <h2>Ventajas</h2>
+    <ul>
+      <li>
+        Flexibilidad: El cliente puede cambiar el algoritmo utilizado sin tener que modificar el código del cliente.
+      </li>
+      <li>
+        Encapsulación: El algoritmo se encapsula en una clase separada, lo que facilita el mantenimiento y la extensión.
+      </li>
+      <li>
+        Reutilización: Los algoritmos se pueden

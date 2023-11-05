@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Patrón Módulo</title>
+  <link rel="stylesheet" href="patron.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+  <div class="container">
+
+  <h1>Patrón de diseño de módulo ESO</h1>
+  <p>El patrón de diseño de módulo ESO es un patrón de diseño arquitectónico que se utiliza para dividir un sistema en módulos independientes. Cada módulo es responsable de una sola función o responsabilidad, lo que hace que el sistema sea más fácil de entender, mantener y escalar.</p>
+  <p>Los beneficios del patrón de diseño de módulo ESO incluyen:</p>
+  <ul>
+    <li>Mejor legibilidad y mantenibilidad</li>
+    <li>Mayor escalabilidad</li>
+    <li>Mayor flexibilidad</li>
+  </ul>
+  <h3> El patrón consta de tres componentes principales:</h2>
+  <ul>
+    <li>Módulos</li>
+    <li>Interfaces</li>
+    <li>Implementaciones</li>
+  </ul>
+
+  <h3>Ejemplo</h2>
+  <p>
+    El siguiente ejemplo muestra cómo se puede utilizar el patrón Strategy para implementar un algoritmo de clasificación.
+  </p>
+ 
+
+
+  <pre style="background-color:#8b8888; white-space: pre-wrap; overflow-x: auto; line-height: 1.5;">
+    
+
+    # Módulo de presentación
+
+    def mostrar_productos():
+      """Muestra los productos de la tienda."""
+      # ...
+    
+    def agregar_producto_al_carrito(producto):
+      """Agrega un producto al carrito de compras."""
+      # ...
+    
+    def procesar_pago():
+      """Procesa el pago del cliente."""
+      # ...
+    
+    # Módulo de lógica empresarial
+    
+    def crear_orden_de_compra(productos):
+      """Crea una orden de compra para los productos seleccionados."""
+      # ...
+    
+    def actualizar_inventario(productos):
+      """Actualiza el inventario de los productos vendidos."""
+      # ...
+    
+    def enviar_productos(orden_de_compra):
+      """Envía los productos al cliente."""
+      # ...
+    
+    # Módulo de datos
+    
+    def buscar_producto(nombre_producto):
+      """Busca un producto por su nombre."""
+      # ...
+    
+    def obtener_inventario_producto(id_producto):
+      """Obtiene el inventario de un producto."""
+      # ...
+    
+    def crear_orden_de_compra(productos):
+      """Crea una orden de compra para los productos seleccionados."""
+      # ...
+    
+    # Ejemplo de uso
+    
+    # Creamos una instancia de cada módulo.
+    presentacion = Presentacion()
+    logica_empresarial = LogicaEmpresarial()
+    datos = Datos()
+    
+    # Obtenemos los productos de la base de datos.
+    productos = datos.obtener_productos()
+    
+    # Mostramos los productos al usuario.
+    presentacion.mostrar_productos(productos)
+    
+    # El usuario agrega un producto al carrito de compras.
+    producto_seleccionado = productos[0]
+    presentacion.agregar_producto_al_carrito(producto_seleccionado)
+    
+    # El usuario procesa el pago.
+    presentacion.procesar_pago()
+    
+    # La lógica empresarial crea una orden de compra.
+    orden_de_compra = logica_empresarial.crear_orden_de_compra(productos)
+    
+    # La lógica empresarial actualiza el inventario.
+    logica_empresarial.actualizar_inventario(productos)
+    
+    # La lógica empresarial envía los productos al cliente.
+    logica_empresarial.enviar_productos(orden_de_compra)
+    
+ </pre>
+
+
+
+  <p>El módulo de procesamiento de pedidos sería responsable de procesar 
+    los pedidos de los clientes. El módulo de gestión de inventario 
+    sería responsable de mantener el inventario de productos. 
+    El módulo de marketing sería responsable de crear y ejecutar 
+    campañas de marketing.</p>
+ 
+    <h3> Aquí hay una explicación de cómo funciona el código</h2>
+
+    <li>El módulo de presentación es responsable de mostrar 
+    la interfaz de usuario de la página.</li>
+
+    <li> El módulo de lógica empresarial es responsable de procesar
+    los datos y realizar las operaciones necesarias para que la página
+     funcione. </li>
+
+     <li>  El módulo de datos es responsable de almacenar los datos de la 
+     página.</li>
+
+     <p> En este ejemplo, el módulo de presentación utiliza las funciones del módulo de lógica 
+        empresarial para mostrar los productos al usuario y procesar el pago. El módulo de 
+        lógica empresarial utiliza las funciones del módulo de datos para buscar productos 
+        y obtener el inventario.</p>
+
+
+        <p>  Este es solo un ejemplo de cómo se puede utilizar el patrón de diseño de módulo ESO 
+        para dividir una página web en módulos independientes. Puedes adaptar el patrón para 
+        que se adapte a tus necesidades específicas.</p>
+
+
+
+
+
+
+</body>
+</html>

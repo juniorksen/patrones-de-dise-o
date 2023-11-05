@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tetris Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para el canvas */
+        canvas {
+            background-color: #ffffff;
+            border: 1px solid rgb(0, 0, 0);
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <a  id="patron" href="patron.html"> ¡Aprende del patron! </a>
+
+
+    <canvas width="300" height="600"></canvas>
+    
+    <audio id="clearsound" src="sound/Y2meta.app - Original Tetris theme (Tetris Soundtrack) (128 kbps).ogg" preload="auto"></audio>
+    
+   
+    <button id="playbutton" onclick="playButtonClicked();">Play</button>
+   
+    
+
+    
+        
+    <script src="js/tetris.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/render.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var audio = document.getElementById("clearsound");
+            audio.play();
+        });
+    </script>
+</body>
+</html>

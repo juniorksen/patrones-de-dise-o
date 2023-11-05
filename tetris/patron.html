@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Patrón State</title>
+  <link rel="stylesheet" href="patron.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Patrón State</h1>
+  </header>
+  <main>
+    <article class="pattern">
+     
+      <section>
+        <p>El patrón State es un patrón de diseño estructural que permite a un objeto cambiar su comportamiento en función de su estado interno.</p>
+        <p>El patrón State se utiliza para modelar sistemas que tienen múltiples estados, cada uno con su propio conjunto de comportamiento.</p>
+        <img id="Imagen1" src="imagenes/imagen1.png" alt="patron1"> 
+    </section>
+      
+      
+
+        <h2>Estructura</h2>
+      </header>
+      <section>
+
+        <p>El patrón State tiene la siguiente estructura:</p>
+        <ul>
+          <li>Context: La clase Contexto representa el objeto que cambia su comportamiento en función de su estado interno.</li>
+          <li>State: La clase Estado representa un estado específico del objeto Contexto.</li>
+          <li>ConcreteState: Las clases ConcreteState implementan la interfaz Estado para proporcionar el comportamiento específico para cada estado.</li>
+        </ul>
+
+
+        
+        <ul>
+            <li>El patrón State está estrechamente relacionado con el concepto de la Máquina 
+                de estados finitos</li>
+
+                <img id="Imagen2" src="imagenes/imagen2.png" alt="patron2">
+           
+          </ul>
+
+      </section>
+      <header>
+        <h2>Ejemplo</h2>
+      </header>
+      <section>
+        <p>Consideremos un sistema de máquinas expendedoras de refrescos. La máquina expendedora puede estar en uno de los siguientes estados:</p>
+        <ul>
+          <li>Vacío: La máquina expendedora no tiene ningún refresco.</li>
+          <li>Disponible: La máquina expendedora tiene refrescos.</li>
+          <li>Vendido: La máquina expendedora ha vendido un refresco.
+        </ul>
+        <p>El patrón State se puede utilizar para modelar este sistema de la siguiente manera:</p>
+        <ul>
+          <li>Context: La clase MáquinaExpendedora representa la máquina expendedora.
+          <li>State: La interfaz Estado representa un estado de la máquina expendedora.
+          <li>ConcreteState: Las clases ConcreteState implementan la interfaz Estado para proporcionar el comportamiento específico para cada estado.
+        </ul>
+        <p>El código siguiente muestra una implementación del patrón State para el sistema de máquinas expendedoras:</p>
+        
+        <pre style="background-color:#8b8888; white-space: pre-wrap; overflow-x: auto; line-height: 1.5;">
+    
+
+class MáquinaExpendedora
+{
+    private State $estado;
+
+    public function __construct(State $estado)
+    {
+        $this->estado = $estado;
+    }
+
+    public function venderRefresco()
+    {
+        $this->estado->venderRefresco();
+    }
+}
+
+// State
+interface State
+{
+    public function venderRefresco();
+}
+
+// ConcreteState
+class Vacio implements State
+{
+    public function venderRefresco()
+    {
+        echo "La máquina expendedora está vacía.";
+    }
+}
+
+class Disponible implements State
+{
+    public function venderRefresco()
+    {
+        echo "Se ha vendido un refresco.";
+        $this->estado = new Vacio();
+    }
+}
+
+// Ejemplo de uso
+$maquinaExpendedora = new MáquinaExpendedora(new Disponible());
+$maquinaExpendedora->venderRefresco();
+// Salida:
+// Se ha vendido un refresco.
+
+</pre>
+
+      </section>
+      <header>
+        <h2>Ventajas</h2>
+      </header>
+      <section>
+        <ul>
+          <li>El patrón State hace que el código sea más legible y fácil de mantener.</li>
+          <li>El patrón State facilita la adición de nuevos estados y su extensión.

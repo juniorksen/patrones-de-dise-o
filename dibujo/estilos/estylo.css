@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#3ca59d, #a2de96);
+}
+
+canvas {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid white;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+canvas:hover {
+    cursor: crosshair;
+}
+
+.contenedorConfiguracion {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    height: 500px;
+    margin-left: 20px;
+    width: 100%;
+    padding: 30px;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
+.boton {
+    box-sizing: border-box;
+    height: fit-content;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    transition: 800ms all;
+    color: white;
+}
+.boton_rojo {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+.boton_blanco {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.boton_negro {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+.contenedorConfiguracion input:hover {
+    flex: 0.2;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.contenedorConfiguracion p {
+    margin: 10%;
+    align-self: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 25px;
+    margin-bottom: auto;
+}
+.contenedorConfiguracion a {
+    width: fit-content;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.contenedorConfiguracion a:hover {
+    text-decoration: underline;
+}
+
+
+.Patron_Strategy {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    height: 30px; /* Ajusta la altura a 80px */
+    margin-left: 20px;
+    width: 80px; /* Ajusta el ancho a 200px */
+    padding: 30px;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
+
+#patron {
+    margin-top: 20px;
+    appearance: none;
+    font-family: 'SF Pixelate', sans-serif;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    background: #000000;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; /* Hace que el enlace ocupe toda la anchura disponible */
+    text-align: center; /* Centra el texto horizontalmente */
+}

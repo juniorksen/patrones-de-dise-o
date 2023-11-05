@@ -1,0 +1,67 @@
+#playbutton {
+    width: 100px;
+    height: 50px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+}
+
+#pagina.Patrón_State {
+    text-decoration: none;
+    background-color: #FFA500;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+  
+  #pagina.Patrón_State:hover {
+    background-color: #FF4500;
+    color: #fff;
+  }
+
+
+  #startButton {
+    margin-top: 20px;
+    appearance: none;
+    font-family: 'SF Pixelate', sans-serif;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    background: #000000;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#patron {
+  margin-top: 20px;
+  appearance: none;
+  font-family: 'SF Pixelate', sans-serif;
+  border: none;
+  width: 300px;
+  padding: 10px;
+  background: #000000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; /* Hace que el enlace ocupe toda la anchura disponible */
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+  
